@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Síntese de Fala</title>
+</head>
+<body>
+  <button onclick="sintetizarFala()">Clique para Falar</button>
+
+  <script>
+    function sintetizarFala() {
+      // Verifica se o navegador oferece suporte à síntese de fala
+      if ('speechSynthesis' in window) {
+        // Cria uma nova instância do objeto SpeechSynthesisUtterance
+        var synthesis = new SpeechSynthesisUtterance();
+
+        // Define o texto a ser sintetizado
+        synthesis.text = 'Olá! Estou fazendo a síntese de fala em JavaScript.';
+
+        // Fala o texto
+        speechSynthesis.speak(synthesis);
+      } else {
+        // Caso o navegador não suporte a síntese de fala
+        console.log('Desculpe, seu navegador não suporta a síntese de fala.');
+      }
+    }
+  </script>
+</body>
+</html>
